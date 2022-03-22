@@ -35,7 +35,7 @@ local function on_code_action_results(_, results, ctx, config)
 
   local function apply_action(action, client)
     if action.edit then
-      util.apply_workspace_edit(action.edit)
+      util.apply_workspace_edit(action.edit, "utf-16")
     end
     if action.command then
       local command = type(action.command) == "table" and action.command
